@@ -1,0 +1,186 @@
+:root {
+    --bg-primary: #f4f6f9;
+    --bg-card: #ffffff;
+    --text-main: #2d3748;
+    --accent: #4f46e5;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    padding: 20px;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+.control-group {
+    margin-bottom: 20px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #718096;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: var(--accent);
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.toggle-buttons button {
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.toggle-buttons button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Main Content layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Analytics Panel */
+.analytics-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.metric-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--accent);
+}
+
+.metric-card h3 {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 6px;
+}
+
+.metric-card p {
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Product View Layouts */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Product Cards */
+.product-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    border: 1px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-color);
+}
+
+.product-card h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.category-badge {
+    background: #e0e7ff;
+    color: var(--accent);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.price-tag {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Transformations for List View layout change */
+.product-list .product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-list .product-meta {
+    margin-top: 0;
+    gap: 20px;
+}

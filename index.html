@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Filter & Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Controls -->
+        <aside class="sidebar">
+            <h2>Controls</h2>
+            
+            <div class="control-group">
+                <label for="search-input">Search Products</label>
+                <input type="text" id="search-input" placeholder="Type to search... (Debounced)">
+            </div>
+
+            <div class="control-group">
+                <label for="category-select">Category</label>
+                <select id="category-select">
+                    <option value="all">All Categories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Fitness">Fitness</option>
+                    <option value="Apparel">Apparel</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Max Price: $<span id="price-val">1200</span></label>
+                <input type="range" id="price-range" min="0" max="1200" value="1200">
+            </div>
+
+            <div class="control-group view-toggle-group">
+                <label>Layout View</label>
+                <div class="toggle-buttons">
+                    <button id="grid-view-btn" class="active">Grid</button>
+                    <button id="list-view-btn">List</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Metrics & Products -->
+        <main class="main-content">
+            <!-- Analytics Panel -->
+            <section class="analytics-panel">
+                <div class="metric-card">
+                    <h3>Total Items Shown</h3>
+                    <p id="metric-count">0</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Average Price</h3>
+                    <p id="metric-avg">$0.00</p>
+                </div>
+                <div class="metric-card">
+                    <h3>Highest Price</h3>
+                    <p id="metric-max">$0.00</p>
+                </div>
+            </section>
+
+            <!-- Product Feed Container -->
+            <section id="product-feed" class="product-grid">
+                <!-- Dynamically populated via JS -->
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
